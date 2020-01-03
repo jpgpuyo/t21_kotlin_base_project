@@ -43,8 +43,8 @@ dependencies {
     implementation appDependencies.kodein
     implementation appDependencies.kodeinAndroid
 
-    implementation appDependencies.rxJava
-    implementation appDependencies.rxAndroid
+    implementation appDependencies.coroutines
+    implementation appDependencies.coroutinesAndroid
 
     testImplementation appTestDependencies.jUnit
     testImplementation appTestDependencies.mockito
