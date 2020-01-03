@@ -1,1 +1,2 @@
-include ':app', ':domain', ':data'
+include ':example'
+rootProject.name='T21KotlinBaseProject'

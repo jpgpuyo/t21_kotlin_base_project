@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">T21KotlinBaseProject Example</string>
+
+    <string name="display_users">Display users</string>
+
+    <string name="default_error">There was an application error</string>
+    <string name="nointernet_error">Please review your connection</string>
+    <string name="server_error">Server error, sorry for the inconvenience</string>
+    <string name="user_not_found_error">User not found</string>
+
+    <string name="loren_ipsum">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</string>
+
+</resources>

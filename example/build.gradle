@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    defaultConfig {
+        applicationId "com.worldline.t21kotlinbaseproject"
+        minSdkVersion rootProject.ext.androidMinSdkVersion
+        targetSdkVersion rootProject.androidTargetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    def appDependencies = rootProject.ext.applicationDependencies
+    def appTestDependencies = rootProject.ext.applicationTestDependencies
+    def dataDependencies = rootProject.ext.dataDependencies
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation appDependencies.appCompat
+    implementation appDependencies.design
+    implementation appDependencies.cardView
+    implementation appDependencies.corektx
+    implementation appDependencies.constraintLayout
+    implementation appDependencies.navigationFragment
+    implementation appDependencies.navigationUi
+
+    implementation appDependencies.glide
+
+    implementation appDependencies.permissions
+    implementation appDependencies.timber
+
+    implementation appDependencies.kodein
+    implementation appDependencies.kodeinAndroid
+
+    implementation appDependencies.coroutines
+    implementation appDependencies.coroutinesAndroid
+
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitGson
+    implementation dataDependencies.gson
+    implementation dataDependencies.okthttp
+    implementation dataDependencies.loggingInterceptor
+
+    testImplementation appTestDependencies.jUnit
+    testImplementation appTestDependencies.mockito
+    testImplementation appTestDependencies.mockitoKotlin
+    testImplementation appTestDependencies.coroutinesTest
+    testImplementation appTestDependencies.assertj
+
+    androidTestImplementation appTestDependencies.mockitoAndroid
+    androidTestImplementation appTestDependencies.espresso
+    androidTestImplementation appTestDependencies.espressoCore
+    androidTestImplementation appTestDependencies.coroutinesTest
+    androidTestImplementation appTestDependencies.assertj
+}
